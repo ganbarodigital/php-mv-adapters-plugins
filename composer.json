@@ -21,6 +21,7 @@
     "require": {
         "ganbarodigital/php-the-missing-bits": "^1.9",
         "php": ">= 7.0",
-        "couscous/couscous": "dev-develop"
+        "couscous/couscous": "dev-develop",
+        "ganbarodigital/php-mv-exception-helpers": "^1.2016061902"
     }
 }

@@ -2,4 +2,9 @@
 
 ## develop branch
 
-Nothing yet.
+### New
+
+* Added initial exceptions
+  - `AdaptersAndPluginsException` base exception
+  - `NoSuchPluginClass` exception
+  - `NoSuchPluginClassMethod` exception
