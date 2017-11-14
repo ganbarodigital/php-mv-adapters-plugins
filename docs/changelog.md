@@ -15,3 +15,4 @@
   - `IsPluginClass` check
 * Added initial robustness requirements
   - `RequirePluginProvider` requirement
+  - `RequirePluginClass` requirement
