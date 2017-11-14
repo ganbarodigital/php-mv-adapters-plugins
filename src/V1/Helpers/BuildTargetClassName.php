@@ -53,16 +53,16 @@ class BuildTargetClassName
     /**
      * work out the full name of the class we want to use
      *
-     * @param  PluginProvider $plugin
+     * @param  PluginProvider $pluginProvider
      *         the plugin that will provide the class we want
-     * @param  string  $classFragment
+     * @param  string  $plugin
      *         subpath to the class we want to call
      * @return string
      *         the fully-qualified name of the class to call
      */
-    public static function using(PluginProvider $plugin, string $classFragment)
+    public static function using(PluginProvider $pluginProvider, string $plugin)
     {
         // what class are we trying to call?
-        return $plugin->getPluginNamespace() . '\\' . $classFragment;
+        return $pluginProvider->getPluginNamespace() . '\\' . $plugin;
     }
 }

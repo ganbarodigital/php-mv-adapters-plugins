@@ -48,7 +48,7 @@ require_once(__DIR__ . "/../Fixtures/DummyPlugin.php");
 use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\AdaptersAndPluginsException;
 use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchPluginClass;
 use GanbaroDigital\AdaptersAndPlugins\V1\Helpers;
-use GanbaroDigital\AdaptersAndPlugins\V1\Plugin;
+use GanbaroDigital\AdaptersAndPlugins\V1\PluginTypes\PluginProvider;
 use GanbaroDigital\ExceptionHelpers\V1\BaseExceptions\ParameterisedException;
 use GanbaroDigital\MissingBits\TypeInspectors\GetPrintableType;
 use GanbaroDigitalTest\AdaptersAndPlugins\V1\Fixtures\DummyPlugin;
@@ -162,7 +162,7 @@ class NoSuchPluginClassTest extends \PHPUnit\Framework\TestCase
         // setup your test
 
         $plugin = new DummyPlugin;
-        $this->assertInstanceOf(Plugin::class, $plugin);
+        $this->assertInstanceOf(PluginProvider::class, $plugin);
         $className = Helpers\BuildTargetClassName::using($plugin, "No\\Such\\Class");
         $this->assertTrue(strlen($className) > 0);
 

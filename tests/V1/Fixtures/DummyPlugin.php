@@ -43,9 +43,9 @@
 
 namespace GanbaroDigitalTest\AdaptersAndPlugins\V1\Fixtures;
 
-use GanbaroDigital\AdaptersAndPlugins\V1\Plugin;
+use GanbaroDigital\AdaptersAndPlugins\V1\PluginTypes\PluginProvider;
 
-class DummyPlugin implements Plugin
+class DummyPlugin implements PluginProvider
 {
     /**
      * return the __NAMESPACE__ for classes provided by this plugin
@@ -53,7 +53,7 @@ class DummyPlugin implements Plugin
      * @return string
      *         the __NAMESPACE__ constant
      */
-    public function getNamespace() : string
+    public function getPluginNamespace() : string
     {
         return __NAMESPACE__;
     }

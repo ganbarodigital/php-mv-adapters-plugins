@@ -43,7 +43,7 @@
 
 namespace GanbaroDigitalTest\AdaptersAndPlugins\V1\Fixtures\Operations;
 
-use GanbaroDigital\AdaptersAndPlugins\V1\PluginClass;
+use GanbaroDigital\AdaptersAndPlugins\V1\PluginTypes\PluginClass;
 
 class DummyOperation implements PluginClass
 {
