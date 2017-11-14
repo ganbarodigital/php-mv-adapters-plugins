@@ -48,33 +48,33 @@ use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchMethodOnPluginClass;
 use GanbaroDigital\AdaptersAndPlugins\V1\Helpers;
 use GanbaroDigital\AdaptersAndPlugins\V1\PluginTypes\PluginProvider;
 use GanbaroDigital\AdaptersAndPlugins\V1\Requirements\RequirePluginClass;
-use GanbaroDigital\AdaptersAndPlugins\V1\Requirements\RequirePluginClassMethod;
+use GanbaroDigital\AdaptersAndPlugins\V1\Requirements\RequireMethodOnPluginClass;
 
 /**
- * call a class that's provided by a specific plugin
+ * call a plugin that's provided by a specific plugin provider
  */
 class CallPlugin
 {
     /**
-     * call a class that's provided by a specific plugin
+     * call a plugin that's provided by a specific plugin provider
      *
      * @param  PluginProvider $pluginProvider
-     *         the plugin that will provide the class we want
+     *         the provider that will provide the plugin we want
      * @param  string $plugin
-     *         subpath to the class we want to call
+     *         subpath to the plugin we want to call
      * @param  string $method
-     *         the method on $plugin that we want to call
-     * @param  ... $params
+     *         the method on $pluginProvider that we want to call
+     * @param  ...$params
      *         variadic of the parameters to pass to the method
      * @return mixed
      *         whatever the method returns (if anything)
      * @throws NoSuchPluginClass
-     *         if the plugin does not provide the class you are targeting
+     *         if the provider does not provide the class you are targeting
      * @throws NotAPluginClass
-     *         if the plugin does provide the class you are targeting, but
-     *         it is doesn't implement PluginClass
+     *         if the provider does provide the class you are targeting, but
+     *         the targeted class doesn't implement PluginClass
      * @throws NoSuchMethodOnPluginClass
-     *         if the plugin's class does not provide the method you are
+     *         if the targeted class does not provide the method you are
      *         trying to call
      */
     public static function using(PluginProvider $pluginProvider, string $plugin, string $method, ...$params)
@@ -85,7 +85,7 @@ class CallPlugin
         // because this provides the clearest errors if the caller has
         // made a mistake
         RequirePluginClass::apply($plugin)->to($pluginProvider);
-        RequirePluginClassMethod::apply($plugin, $method)->to($pluginProvider);
+        RequireMethodOnPluginClass::apply($plugin, $method)->to($pluginProvider);
 
         // if we get to here, we know that we can attempt the call
         //
