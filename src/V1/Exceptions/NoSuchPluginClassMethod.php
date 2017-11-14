@@ -53,5 +53,5 @@ class NoSuchPluginClassMethod
   implements AdaptersAndPluginsException
 {
     // our format string
-    static protected $defaultFormat = "plugin '%pluginName\$s' class '%className\$s' does not provide method '%methodName\$s'";
+    static protected $defaultFormat = "plugin '%pluginName\$s' class '%fieldOrVar\$s' does not provide method '%methodName\$s'";
 }

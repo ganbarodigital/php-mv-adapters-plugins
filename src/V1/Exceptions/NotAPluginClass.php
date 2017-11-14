@@ -58,5 +58,5 @@ class NotAPluginClass
   implements AdaptersAndPluginsException
 {
     // our format string
-    static protected $defaultFormat = "plugin '%pluginName\$s' class '%className\$s' is not a PluginClass";
+    static protected $defaultFormat = "plugin '%pluginName\$s' class '%fieldOrVar\$s' is not a PluginClass";
 }
