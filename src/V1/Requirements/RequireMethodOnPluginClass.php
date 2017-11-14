@@ -88,7 +88,7 @@ class RequireMethodOnPluginClass implements Requirement
      *        the class we want to call inside the plugin
      * @param string $methodName
      *        the method we want to call on the class
-     * @return RequirePluginClassMethod
+     * @return RequireMethodOnPluginClass
      */
     public static function apply(string $partialClassName, string $methodName)
     {
