@@ -21,3 +21,6 @@
   - `BuildTargetClassName` helper
 * Added ability to call plugins
   - `CallPlugin` operation
+* Added basic types
+  - `PluginProvider`
+  - `PluginClass`
