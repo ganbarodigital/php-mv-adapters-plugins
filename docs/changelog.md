@@ -13,3 +13,5 @@
 * Added initial checks
   - `IsPluginProvider` check
   - `IsPluginClass` check
+* Added initial robustness requirements
+  - `RequirePluginProvider` requirement
