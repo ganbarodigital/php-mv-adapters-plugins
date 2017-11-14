@@ -93,7 +93,7 @@ class RequirePluginProviderTest extends \PHPUnit\Framework\TestCase
      * @covers ::inspect
      * @dataProvider provideNonProviders
      */
-    public function test_rejects_everything_else($item)
+    public function test_throws_NotAPluginProvider_for_everything_else($item)
     {
         // ----------------------------------------------------------------
         // setup your test
