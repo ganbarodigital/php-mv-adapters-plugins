@@ -8,3 +8,4 @@
   - `AdaptersAndPluginsException` base exception
   - `NoSuchPluginClass` exception
   - `NoSuchPluginClassMethod` exception
+  - `NotAPluginClass` exception
