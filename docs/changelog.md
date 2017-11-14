@@ -16,3 +16,4 @@
 * Added initial robustness requirements
   - `RequirePluginProvider` requirement
   - `RequirePluginClass` requirement
+  - `RequirePluginClassMethod` requirement
