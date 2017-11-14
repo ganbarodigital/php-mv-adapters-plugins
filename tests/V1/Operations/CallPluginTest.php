@@ -132,4 +132,48 @@ class CallPluginTest extends \PHPUnit\Framework\TestCase
         // test the results
     }
 
+    /**
+     * @covers ::using
+     * @expectedException GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NotAPluginClass
+     */
+    public function test_throws_NotAPluginClass_if_plugin_does_not_implement_PluginClass()
+    {
+        // ----------------------------------------------------------------
+        // setup your test
+
+        $provider = new DummyPlugin;
+        $plugin = "Operations\\NotAnOperation";
+        $method = "NeitherDoesThis";
+
+        // ----------------------------------------------------------------
+        // perform the change
+
+        CallPlugin::using($provider, $plugin, $method);
+
+        // ----------------------------------------------------------------
+        // test the results
+    }
+
+    /**
+     * @covers ::using
+     * @expectedException GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchMethodOnPluginClass
+     */
+    public function test_throws_NoSuchMethodOnPluginClass_if_plugin_does_not_implement_targeted_method()
+    {
+        // ----------------------------------------------------------------
+        // setup your test
+
+        $provider = new DummyPlugin;
+        $plugin = "Operations\\DummyOperation";
+        $method = "thisMethodDoesNotExist";
+
+        // ----------------------------------------------------------------
+        // perform the change
+
+        CallPlugin::using($provider, $plugin, $method);
+
+        // ----------------------------------------------------------------
+        // test the results
+    }
+
 }
