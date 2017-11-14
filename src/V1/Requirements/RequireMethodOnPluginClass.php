@@ -53,7 +53,7 @@ use GanbaroDigital\MissingBits\TypeInspectors\GetPrintableType;
 /**
  * make sure that the plugin's provided class provides the targeted method
  */
-class RequirePluginClassMethod implements Requirement
+class RequireMethodOnPluginClass implements Requirement
 {
     /**
      * which partial class are we looking for?

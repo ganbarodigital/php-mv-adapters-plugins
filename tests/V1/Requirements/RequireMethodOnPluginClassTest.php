@@ -50,15 +50,15 @@ require_once(__DIR__ . "/../Fixtures/Operations/NotAnOperation.php");
 use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchMethodOnPluginClass;
 use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NotAPluginClass;
 use GanbaroDigital\AdaptersAndPlugins\V1\Helpers;
-use GanbaroDigital\AdaptersAndPlugins\V1\Requirements\RequirePluginClassMethod;
+use GanbaroDigital\AdaptersAndPlugins\V1\Requirements\RequireMethodOnPluginClass;
 use GanbaroDigitalTest\AdaptersAndPlugins\V1\Fixtures\DummyPlugin;
 use GanbaroDigitalTest\AdaptersAndPlugins\V1\Fixtures\Operations\DummyOperation;
 use GanbaroDigitalTest\AdaptersAndPlugins\V1\Fixtures\Operations\NotAnOperation;
 
 /**
- * @coversDefaultClass GanbaroDigital\AdaptersAndPlugins\V1\Requirements\RequirePluginClassMethod
+ * @coversDefaultClass GanbaroDigital\AdaptersAndPlugins\V1\Requirements\RequireMethodOnPluginClass
  */
-class RequirePluginClassMethodTest extends \PHPUnit\Framework\TestCase
+class RequireMethodOnPluginClassTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @covers ::apply
@@ -76,12 +76,12 @@ class RequirePluginClassMethodTest extends \PHPUnit\Framework\TestCase
         $plugin = 'Operations\DummyOperation';
         $method = 'reflectBack';
 
-        $unit = new RequirePluginClassMethod($plugin, $method);
+        $unit = new RequireMethodOnPluginClass($plugin, $method);
 
         // ----------------------------------------------------------------
         // perform the change
 
-        RequirePluginClassMethod::apply($plugin, $method)->to($provider);
+        RequireMethodOnPluginClass::apply($plugin, $method)->to($provider);
         $unit($provider);
         $unit->inspect($provider);
 
@@ -107,7 +107,7 @@ class RequirePluginClassMethodTest extends \PHPUnit\Framework\TestCase
         $plugin = "Operations\\DummyOperation";
         $method = "methodDoesNotExist";
 
-        $unit = new RequirePluginClassMethod($plugin, $method);
+        $unit = new RequireMethodOnPluginClass($plugin, $method);
 
         $caught1 = false;
         $caught2 = false;
@@ -119,7 +119,7 @@ class RequirePluginClassMethodTest extends \PHPUnit\Framework\TestCase
         // we check all the different public methods here
 
         try {
-            RequirePluginClassMethod::apply($plugin, $method)->to($provider);
+            RequireMethodOnPluginClass::apply($plugin, $method)->to($provider);
         } catch (NoSuchMethodOnPluginClass $e) {
             $caught1 = true;
         }

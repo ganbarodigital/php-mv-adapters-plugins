@@ -16,7 +16,7 @@
 * Added initial robustness requirements
   - `RequirePluginProvider` requirement
   - `RequirePluginClass` requirement
-  - `RequirePluginClassMethod` requirement
+  - `RequireMethodOnPluginClass` requirement
 * Added useful utilities
   - `BuildTargetClassName` helper
 * Added ability to call plugins
