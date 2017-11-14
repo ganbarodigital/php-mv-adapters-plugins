@@ -19,3 +19,5 @@
   - `RequirePluginClassMethod` requirement
 * Added useful utilities
   - `BuildTargetClassName` helper
+* Added ability to call plugins
+  - `CallPlugin` operation

@@ -19,9 +19,10 @@
         }
     },
     "require": {
-        "ganbarodigital/php-the-missing-bits": "^1.9",
+        "ganbarodigital/php-the-missing-bits": "dev-develop as 1.10.0",
         "php": ">= 7.0",
         "couscous/couscous": "dev-develop",
-        "ganbarodigital/php-mv-exception-helpers": "^1.2016061902"
+        "ganbarodigital/php-mv-exception-helpers": "^1.2016061902",
+        "ganbarodigital/php-mv-defensive": "^1.2016082401"
     }
 }
