@@ -9,3 +9,5 @@
   - `NoSuchPluginClass` exception
   - `NoSuchPluginClassMethod` exception
   - `NotAPluginClass` exception
+* Added initial checks
+  - `IsPluginProvider` check
