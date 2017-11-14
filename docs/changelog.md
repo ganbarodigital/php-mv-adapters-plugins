@@ -17,3 +17,5 @@
   - `RequirePluginProvider` requirement
   - `RequirePluginClass` requirement
   - `RequirePluginClassMethod` requirement
+* Added useful utilities
+  - `BuildTargetClassName` helper
