@@ -7,7 +7,7 @@
 * Added initial exceptions
   - `AdaptersAndPluginsException` base exception
   - `NoSuchPluginClass` exception
-  - `NoSuchPluginClassMethod` exception
+  - `NoSuchMethodOnPluginClass` exception
   - `NotAPluginClass` exception
   - `NotAPluginProvider` exception
 * Added initial checks

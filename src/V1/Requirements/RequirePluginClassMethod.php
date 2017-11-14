@@ -43,7 +43,7 @@
 
 namespace GanbaroDigital\AdaptersAndPlugins\V1\Requirements;
 
-use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchPluginClassMethod;
+use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchMethodOnPluginClass;
 use GanbaroDigital\AdaptersAndPlugins\V1\Helpers;
 use GanbaroDigital\AdaptersAndPlugins\V1\PluginTypes\PluginClass;
 use GanbaroDigital\AdaptersAndPlugins\V1\PluginTypes\PluginProvider;
@@ -101,7 +101,7 @@ class RequirePluginClassMethod implements Requirement
      * @param  PluginProvider $pluginProvider
      *         the plugin that will provide the class we want
      * @return void
-     * @throws NoSuchPluginClassMethod
+     * @throws NoSuchMethodOnPluginClass
      *         if the plugin does not provide the class::method you
      *         are targeting
      */
@@ -116,7 +116,7 @@ class RequirePluginClassMethod implements Requirement
 
         // does the method exist?
         if (!method_exists($pluginClassName, $this->methodName)) {
-            throw NoSuchPluginClassMethod::newFromInputParameter($pluginClassName, 'pluginClassName', [
+            throw NoSuchMethodOnPluginClass::newFromInputParameter($pluginClassName, 'pluginClassName', [
                 'pluginName' => GetPrintableType::of($pluginProvider),
                 'methodName' => $this->methodName,
             ]);
@@ -131,7 +131,7 @@ class RequirePluginClassMethod implements Requirement
      * @param  PluginProvider $pluginProvider
      *         the plugin that will provide the class we want
      * @return void
-     * @throws NoSuchPluginClassMethod
+     * @throws NoSuchMethodOnPluginClass
      *         if the plugin does not provide the class::method you
      *         are targeting
      */
@@ -146,7 +146,7 @@ class RequirePluginClassMethod implements Requirement
      * @param  PluginProvider $pluginProvider
      *         the plugin that will provide the class we want
      * @return void
-     * @throws NoSuchPluginClassMethod
+     * @throws NoSuchMethodOnPluginClass
      *         if the plugin does not provide the class::method you
      *         are targeting
      */

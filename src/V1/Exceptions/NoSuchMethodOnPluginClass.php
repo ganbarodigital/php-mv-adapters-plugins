@@ -48,7 +48,7 @@ use GanbaroDigital\ExceptionHelpers\V1\BaseExceptions\ParameterisedException;
 /**
  * exception thrown when we can't find a requested method on a plugin's class
  */
-class NoSuchPluginClassMethod
+class NoSuchMethodOnPluginClass
   extends ParameterisedException
   implements AdaptersAndPluginsException
 {

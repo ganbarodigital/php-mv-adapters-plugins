@@ -44,7 +44,7 @@
 namespace GanbaroDigital\AdaptersAndPlugins\V1\Operations;
 
 use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchPluginClass;
-use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchPluginClassMethod;
+use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchMethodOnPluginClass;
 use GanbaroDigital\AdaptersAndPlugins\V1\Helpers;
 use GanbaroDigital\AdaptersAndPlugins\V1\PluginTypes\PluginProvider;
 use GanbaroDigital\AdaptersAndPlugins\V1\Requirements\RequirePluginClass;
@@ -73,7 +73,7 @@ class CallPlugin
      * @throws NotAPluginClass
      *         if the plugin does provide the class you are targeting, but
      *         it is doesn't implement PluginClass
-     * @throws NoSuchPluginClassMethod
+     * @throws NoSuchMethodOnPluginClass
      *         if the plugin's class does not provide the method you are
      *         trying to call
      */

@@ -47,7 +47,7 @@ require_once(__DIR__ . "/../Fixtures/DummyPlugin.php");
 require_once(__DIR__ . "/../Fixtures/Operations/DummyOperation.php");
 require_once(__DIR__ . "/../Fixtures/Operations/NotAnOperation.php");
 
-use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchPluginClassMethod;
+use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchMethodOnPluginClass;
 use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NotAPluginClass;
 use GanbaroDigital\AdaptersAndPlugins\V1\Helpers;
 use GanbaroDigital\AdaptersAndPlugins\V1\Requirements\RequirePluginClassMethod;
@@ -98,7 +98,7 @@ class RequirePluginClassMethodTest extends \PHPUnit\Framework\TestCase
      * @covers ::__invoke
      * @covers ::__construct
      */
-    public function test_throws_NoSuchPluginClassMethod_when_method_is_not_defined()
+    public function test_throws_NoSuchMethodOnPluginClass_when_method_is_not_defined()
     {
         // ----------------------------------------------------------------
         // setup your test
@@ -120,19 +120,19 @@ class RequirePluginClassMethodTest extends \PHPUnit\Framework\TestCase
 
         try {
             RequirePluginClassMethod::apply($plugin, $method)->to($provider);
-        } catch (NoSuchPluginClassMethod $e) {
+        } catch (NoSuchMethodOnPluginClass $e) {
             $caught1 = true;
         }
 
         try {
             $unit($provider);
-        } catch (NoSuchPluginClassMethod $e) {
+        } catch (NoSuchMethodOnPluginClass $e) {
             $caught2 = true;
         }
 
         try {
             $unit->inspect($provider);
-        } catch (NoSuchPluginClassMethod $e) {
+        } catch (NoSuchMethodOnPluginClass $e) {
             $caught3 = true;
         }
 

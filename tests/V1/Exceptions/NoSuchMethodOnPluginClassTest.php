@@ -47,7 +47,7 @@ require_once(__DIR__ . "/../Fixtures/DummyPlugin.php");
 require_once(__DIR__ . "/../Fixtures/Operations/DummyOperation.php");
 
 use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\AdaptersAndPluginsException;
-use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchPluginClassMethod;
+use GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchMethodOnPluginClass;
 use GanbaroDigital\AdaptersAndPlugins\V1\Helpers;
 use GanbaroDigital\AdaptersAndPlugins\V1\PluginTypes\PluginProvider;
 use GanbaroDigital\ExceptionHelpers\V1\BaseExceptions\ParameterisedException;
@@ -55,9 +55,9 @@ use GanbaroDigital\MissingBits\TypeInspectors\GetPrintableType;
 use GanbaroDigitalTest\AdaptersAndPlugins\V1\Fixtures\DummyPlugin;
 
 /**
- * @coversDefaultClass GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchPluginClassMethod
+ * @coversDefaultClass GanbaroDigital\AdaptersAndPlugins\V1\Exceptions\NoSuchMethodOnPluginClass
  */
-class NoSuchPluginClassMethodTest extends \PHPUnit\Framework\TestCase
+class NoSuchMethodOnPluginClassTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @coversNothing
@@ -70,12 +70,12 @@ class NoSuchPluginClassMethodTest extends \PHPUnit\Framework\TestCase
         // ----------------------------------------------------------------
         // perform the change
 
-        $unit = new NoSuchPluginClassMethod("");
+        $unit = new NoSuchMethodOnPluginClass("");
 
         // ----------------------------------------------------------------
         // test the results
 
-        $this->assertInstanceOf(NoSuchPluginClassMethod::class, $unit);
+        $this->assertInstanceOf(NoSuchMethodOnPluginClass::class, $unit);
     }
 
     /**
@@ -89,7 +89,7 @@ class NoSuchPluginClassMethodTest extends \PHPUnit\Framework\TestCase
         // ----------------------------------------------------------------
         // perform the change
 
-        $unit = new NoSuchPluginClassMethod("");
+        $unit = new NoSuchMethodOnPluginClass("");
 
         // ----------------------------------------------------------------
         // test the results
@@ -108,7 +108,7 @@ class NoSuchPluginClassMethodTest extends \PHPUnit\Framework\TestCase
         // ----------------------------------------------------------------
         // perform the change
 
-        $unit = new NoSuchPluginClassMethod("");
+        $unit = new NoSuchMethodOnPluginClass("");
 
         // ----------------------------------------------------------------
         // test the results
@@ -127,7 +127,7 @@ class NoSuchPluginClassMethodTest extends \PHPUnit\Framework\TestCase
         // ----------------------------------------------------------------
         // perform the change
 
-        $unit = new NoSuchPluginClassMethod("");
+        $unit = new NoSuchMethodOnPluginClass("");
 
         // ----------------------------------------------------------------
         // test the results
@@ -146,7 +146,7 @@ class NoSuchPluginClassMethodTest extends \PHPUnit\Framework\TestCase
         // ----------------------------------------------------------------
         // perform the change
 
-        $unit = new NoSuchPluginClassMethod("");
+        $unit = new NoSuchMethodOnPluginClass("");
 
         // ----------------------------------------------------------------
         // test the results
@@ -168,12 +168,12 @@ class NoSuchPluginClassMethodTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue(strlen($className) > 0);
         $this->assertTrue(class_exists($className));
 
-        $expectedMessage = "ReflectionMethod->invokeArgs(): GanbaroDigitalTest\AdaptersAndPlugins\V1\Exceptions\NoSuchPluginClassMethodTest->test_can_create_from_input_parameter()@178 says plugin 'object<GanbaroDigitalTest\AdaptersAndPlugins\V1\Fixtures\DummyPlugin>' class 'GanbaroDigitalTest\AdaptersAndPlugins\V1\Fixtures\Operations\DummyOperation' does not provide method 'NoSuchMethod'";
+        $expectedMessage = "ReflectionMethod->invokeArgs(): GanbaroDigitalTest\AdaptersAndPlugins\V1\Exceptions\NoSuchMethodOnPluginClassTest->test_can_create_from_input_parameter()@178 says plugin 'object<GanbaroDigitalTest\AdaptersAndPlugins\V1\Fixtures\DummyPlugin>' class 'GanbaroDigitalTest\AdaptersAndPlugins\V1\Fixtures\Operations\DummyOperation' does not provide method 'NoSuchMethod'";
 
         // ----------------------------------------------------------------
         // perform the change
 
-        $unit = NoSuchPluginClassMethod::newFromInputParameter($className, 'className', [
+        $unit = NoSuchMethodOnPluginClass::newFromInputParameter($className, 'className', [
             'pluginName' => GetPrintableType::of($plugin),
             'methodName' => 'NoSuchMethod',
         ]);
@@ -181,7 +181,7 @@ class NoSuchPluginClassMethodTest extends \PHPUnit\Framework\TestCase
         // ----------------------------------------------------------------
         // test the results
 
-        $this->assertInstanceOf(NoSuchPluginClassMethod::class, $unit);
+        $this->assertInstanceOf(NoSuchMethodOnPluginClass::class, $unit);
 
         $actualMessage = $unit->getMessage();
         $this->assertEquals($expectedMessage, $actualMessage);
